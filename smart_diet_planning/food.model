@@ -1,0 +1,19 @@
+from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
+class FoodItem(Base):
+    __tablename__ = "food_items"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    food_name = Column(String(100), nullable=False)
+    calories = Column(Integer, nullable=False)
+    protein = Column(Float, nullable=False)
+    carbs = Column(Float, nullable=False)
+    fats = Column(Float, nullable=False)
+    meal_type = Column(String(50), nullable=False)
+
+    def __repr__(self):
+        return f"<FoodItem(name={self.food_name}, calories={self.calories}, protein={self.protein})>"
+

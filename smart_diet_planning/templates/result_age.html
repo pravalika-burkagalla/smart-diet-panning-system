@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Group Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="results-container">
+        <div class="results-header">
+            <h2>📅 Age Group Information</h2>
+            <p>Understanding your age-specific nutritional needs</p>
+        </div>
+
+        <div class="age-group-info">
+            <div class="info-card">
+                <h4>{{ age_group.group }}</h4>
+                <p><strong>BMI Guidelines:</strong> {{ age_group.bmi_info }}</p>
+                <p><strong>Calorie Recommendations:</strong> {{ age_group.calorie_info }}</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="{{ url_for('exercise_rec') }}" class="nav-button">Next: Exercise Recommendations →</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('bmi_results') }}" class="nav-link">← BMI & Calories</a>
+            <a href="/" class="nav-link">Start Over</a>
+        </div>
+    </div>
+</body>
+</html>

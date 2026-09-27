@@ -1,0 +1,9 @@
+// Example: simple validation
+function validateForm() {
+    let age = document.forms[0]["age"].value;
+    if (age <= 0) {
+        alert("Age must be positive!");
+        return false;
+    }
+    return true;
+}

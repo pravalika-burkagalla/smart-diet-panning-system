@@ -1,0 +1,16 @@
+# Updated requirements.txt with all dependencies
+Flask==3.0.0
+Jinja2==3.1.6
+Werkzeug==3.1.5
+itsdangerous==2.2.0
+blinker==1.9.0
+click==8.3.1
+
+# Database
+SQLAlchemy==2.0.25
+PyMySQL==1.1.0
+
+# Optional (for future enhancements)
+scikit-learn==1.4.0
+matplotlib==3.8.2
+requests==2.32.5

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your BMI Result Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="results-container">
+        <div class="results-header">
+            <h2>Your BMI & Calorie Analysis</h2>
+            <p>Understanding your basic metabolic metrics</p>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>BMI</h3>
+                <div class="value">{{ bmi|round(2) }}</div>
+                <p class="metric-sub">Body Mass Index</p>
+            </div>
+            <div class="metric-card">
+                <h3>BMR</h3>
+                <div class="value">{{ bmr|int }}</div>
+                <p class="metric-sub">Basal Metabolic Rate (calories)</p>
+            </div>
+            <div class="metric-card">
+                <h3>Daily Calories</h3>
+                <div class="value">{{ calories|int }}</div>
+                <p class="metric-sub">Recommended daily intake</p>
+            </div>
+        </div>
+
+        <div class="summary-actions">
+            <a href="{{ url_for('age_group') }}" class="primary-action">Next: Age Group Info →</a>
+            <a href="{{ url_for('index') }}" class="secondary-action">← Start Over</a>
+        </div>
+
+        <div class="summary-actions">
+            <a href="{{ url_for('age_group') }}" class="primary-action">Next: Age Group Info →</a>
+            <a href="{{ url_for('exercise_rec') }}" class="primary-action">Next: Exercise →</a>
+            <a href="{{ url_for('food_rec') }}" class="primary-action">Next: Food →</a>
+            <a href="{{ url_for('meal_plan') }}" class="secondary-action">Next: Meal Plan →</a>
+            <a href="{{ url_for('index') }}" class="secondary-action">← Start Over</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('age_group') }}" class="nav-link">→ Next: Age Group Info</a>
+            <a href="{{ url_for('exercise_rec') }}" class="nav-link">→ Next: Exercise</a>
+            <a href="{{ url_for('food_rec') }}" class="nav-link">→ Next: Food</a>
+            <a href="{{ url_for('meal_plan') }}" class="nav-link">→ Next: Meal Plan</a>
+            <a href="/" class="nav-link">Start Over</a>
+        </div>
+    </div>
+</body>
+</html>

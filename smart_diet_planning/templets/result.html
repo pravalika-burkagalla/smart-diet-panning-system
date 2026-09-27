@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Diet Plan</title>
+</head>
+<body>
+    <h2>Results</h2>
+    <p>BMI: {{ bmi }}</p>
+    <p>BMR: {{ bmr }}</p>
+    <p>Daily Calories: {{ calories }}</p>
+
+    <h3>Diet Plan</h3>
+    <h4>Breakfast</h4>
+    <ul>
+        {% for item in diet_plan["Breakfast"] %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Lunch</h4>
+    <ul>
+        {% for item in diet_plan["Lunch"] %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Dinner</h4>
+    <ul>
+        {% for item in diet_plan["Dinner"] %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

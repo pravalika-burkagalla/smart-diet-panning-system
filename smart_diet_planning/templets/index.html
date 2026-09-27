@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Diet Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Enter Your Details</h2>
+    <form action="/result" method="post">
+        Age: <input type="number" name="age" required><br>
+        Gender: <select name="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select><br>
+        Height (cm): <input type="number" name="height" required><br>
+        Weight (kg): <input type="number" name="weight" required><br>
+        Activity: <select name="activity">
+            <option value="sedentary">Sedentary</option>
+            <option value="light">Light</option>
+            <option value="moderate">Moderate</option>
+            <option value="active">Active</option>
+            <option value="very_active">Very Active</option>
+        </select><br>
+        Goal: <select name="goal">
+            <option value="loss">Weight Loss</option>
+            <option value="gain">Weight Gain</option>
+            <option value="maintain">Maintain</option>
+        </select><br>
+        <button type="submit">Generate Plan</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Flask==3.0.0
+Jinja2==3.1.2
+Werkzeug==3.0.1
+itsdangerous==2.1.2
+click==8.1.7
+
+# Database
+SQLAlchemy==2.0.25
+PyMySQL==1.1.0   # If using MySQL
+sqlite3          # Comes built-in with Python, no need to install separately
+
+# Optional (for ML/Charts if you expand project)
+scikit-learn==1.4.0
+matplotlib==3.8.2

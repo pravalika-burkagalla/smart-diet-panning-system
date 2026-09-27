@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="results-container">
+        <div class="results-header">
+            <h2>🥗 Food Recommendations</h2>
+            <p>Nutritional guidance tailored to your needs</p>
+        </div>
+
+        <div class="recommendations-section">
+            <div class="recommendation-card">
+                <h4>Focus: {{ foods.focus }}</h4>
+                <div class="rec-content">
+                    <div class="rec-column">
+                        <h5>🍎 Recommended Foods:</h5>
+                        <ul>
+                            {% for food in foods.foods %}
+                            <li>{{ food }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="rec-column">
+                        <h5>🍽️ Meal Ideas:</h5>
+                        <ul>
+                            {% for idea in foods.meal_ideas %}
+                            <li>{{ idea }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h5>💡 Tips:</h5>
+                        <ul>
+                            {% for tip in foods.tips %}
+                            <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="{{ url_for('meal_plan') }}" class="nav-button">Next: Your Meal Plan →</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('exercise_rec') }}" class="nav-link">← Exercise</a>
+            <a href="/" class="nav-link">Start Over</a>
+        </div>
+    </div>
+</body>
+</html>

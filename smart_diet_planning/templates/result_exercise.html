@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="results-container">
+        <div class="results-header">
+            <h2>💪 Exercise Recommendations</h2>
+            <p>Personalized fitness guidance based on your profile</p>
+        </div>
+
+        <div class="recommendations-section">
+            <div class="recommendation-card">
+                <h4>Focus: {{ exercises.focus }}</h4>
+                <div class="rec-content">
+                    <div class="rec-column">
+                        <h5>🏃 Recommended Exercises:</h5>
+                        <ul>
+                            {% for exercise in exercises.exercises %}
+                            <li>{{ exercise }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="rec-column">
+                        <h5>⏱️ Duration: {{ exercises.duration }}</h5>
+                        <h5>💡 Tips:</h5>
+                        <ul>
+                            {% for tip in exercises.tips %}
+                            <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="{{ url_for('food_rec') }}" class="nav-button">Next: Food Recommendations →</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('age_group') }}" class="nav-link">← Age Group</a>
+            <a href="/" class="nav-link">Start Over</a>
+        </div>
+    </div>
+</body>
+</html>

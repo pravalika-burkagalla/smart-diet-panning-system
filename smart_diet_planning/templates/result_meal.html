@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Meal Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="results-container">
+        <div class="results-header">
+            <h2>🍽️ Your Personalized Meal Plan</h2>
+            <p>Complete nutrition plan tailored to your body details, BMI category, age, and fitness goals</p>
+        </div>
+
+        <div class="plan-summary">
+            <p><strong>Goal:</strong> {{ goal.capitalize() }} | <strong>BMI Category:</strong> {{ bmi_category }}</p>
+            {% if age_group %}
+            <p><strong>Age Group:</strong> {{ age_group.group }}</p>
+            {% endif %}
+        </div>
+
+        <div class="diet-plan">
+            <div class="meal-section">
+                <h4>🌅 Breakfast</h4>
+                <ul>
+                    {% if diet_plan["Breakfast"] %}
+                        {% for item in diet_plan["Breakfast"] %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No specific recommendations for this meal time</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="meal-section">
+                <h4>☀️ Lunch</h4>
+                <ul>
+                    {% if diet_plan["Lunch"] %}
+                        {% for item in diet_plan["Lunch"] %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No specific recommendations for this meal time</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="meal-section">
+                <h4>🌙 Dinner</h4>
+                <ul>
+                    {% if diet_plan["Dinner"] %}
+                        {% for item in diet_plan["Dinner"] %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No specific recommendations for this meal time</li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="meal-section">
+                <h4>🍪 Snacks</h4>
+                <ul>
+                    {% if diet_plan["Snack"] %}
+                        {% for item in diet_plan["Snack"] %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No specific recommendations for this meal time</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('food_rec') }}" class="nav-link">← Food Recommendations</a>
+            <a href="/" class="nav-link">Start Over</a>
+        </div>
+    </div>
+</body>
+</html>
